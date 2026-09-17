@@ -180,7 +180,7 @@ section {
     <img src="photo110.jpg" alt="ကျောင်းတိုက်ပုံရိပ် ၁၀">
 </div>
 
-<button onclick="showGallery(this)">Show More</button>
+<button onclick="showphoto(this)">Show More</button>
 </section>
 
 <section id="book">
@@ -242,14 +242,15 @@ function showGallery(button) {
     }
 }
 
-function showphoto(button) {
+
+function showPhoto(button) {
     const photo = document.getElementById("photoMore");
 
     if (photo.style.display === "none" || photo.style.display === "") {
         photo.style.display = "grid";
         button.textContent = "Show Less";
     } else {
-       photo.style.display = "none";
+        photo.style.display = "none";
         button.textContent = "Show More";
     }
 }
