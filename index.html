@@ -242,7 +242,17 @@ function showGallery(button) {
     }
 }
 
+function showphoto(button) {
+    const gallery = document.getElementById("photoMore");
 
+    if (gallery.style.display === "none" || gallery.style.display === "") {
+        gallery.style.display = "grid";
+        button.textContent = "Show Less";
+    } else {
+        gallery.style.display = "none";
+        button.textContent = "Show More";
+    }
+}
 function showDaily(button) {
     const text = document.getElementById("dailyText");
 
