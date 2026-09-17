@@ -71,27 +71,24 @@ section {
       padding: 10px 20px;
       cursor: pointer;
     }
-	/* Gallery Container ကို Grid သုံးပြီး ၁ တန်းမှာ ၅ ခု ခွဲခြားခြင်း */
-.image-gallery {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr); /* ၁ တန်းလျှင် ၅ ပုံ */
-  gap: 10px; /* ဓာတ်ပုံများကြား အကွာအဝေး */
-  margin-top: 10px;
+	.image-gallery {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin-top: 10px;
 }
 
-/* ဓာတ်ပုံများ၏ အရွယ်အစားနှင့် ပုံစံကို ညီစေခြင်း */
 .image-gallery img {
-  width: 100%;
-  height: 150px; /* ပုံအားလုံး အမြင့်ညီစေရန် (လိုအပ်သလို ပြင်နိုင်ပါသည်) */
-  object-fit: cover; /* ပုံများ မတွန့်ဘဲ လှပစွာ ဝင်ဆံ့စေရန် */
-  border-radius: 8px; /* ထောင့်ဝိုင်းပေးခြင်း */
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
 }
 
-/* ဖုန်းများ/မျက်နှာပြင် သေးသော စက်များတွင် ကြည့်ရလွယ်ကူစေရန် Responsive လုပ်ခြင်း */
 @media (max-width: 768px) {
-  .image-gallery {
-    grid-template-columns: repeat(2, 1fr); /* ဖုန်းတွင် ၁ တန်းလျှင် ၂ ပုံစီ ပြပါမည် */
-  }
+    .image-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 </style>
 
@@ -147,25 +144,23 @@ section {
   <h2>ပုံရိပ်</h2>
  
   
-  <div class="image-gallery">
+<div class="image-gallery">
     <img src="photo4.jpg" alt="ကျောင်းတိုက်ပုံရိပ် ၁">
     <img src="photo5.jpg" alt="ကျောင်းတိုက်ပုံရိပ် ၂">
     <img src="photo6.jpg" alt="ကျောင်းတိုက်ပုံရိပ် ၃">
     <img src="photo7.jpg" alt="ကျောင်းတိုက်ပုံရိပ် ၄">
     <img src="photo8.jpg" alt="ကျောင်းတိုက်ပုံရိပ် ၅">
-  </div>
-	
-	 <div class="image-gallery">
-	 <div id="galleryMore" style="display: none;">	
-    <img src="photo9.jpg" alt="ကျောင်းတိုက်ပုံရိပ် ၁">
-    <img src="photo10.jpg" alt="ကျောင်းတိုက်ပုံရိပ် ၂">
-    <img src="photo11.jpg" alt="ကျောင်းတိုက်ပုံရိပ် ၃">
-    <img src="photo12.jpg" alt="ကျောင်းတိုက်ပုံရိပ် ၄">
-    <img src="photo13.jpg" alt="ကျောင်းတိုက်ပုံရိပ် ၅">
-	 <button onclick="showMore()">Show More</button>
-  </div>
-	 <button onclick="showMore()">Show More</button>
-	 </div>
+</div>
+
+<div id="galleryMore" class="image-gallery" style="display: none;">
+    <img src="photo9.jpg" alt="ကျောင်းတိုက်ပုံရိပ် ၆">
+    <img src="photo10.jpg" alt="ကျောင်းတိုက်ပုံရိပ် ၇">
+    <img src="photo11.jpg" alt="ကျောင်းတိုက်ပုံရိပ် ၈">
+    <img src="photo12.jpg" alt="ကျောင်းတိုက်ပုံရိပ် ၉">
+    <img src="photo13.jpg" alt="ကျောင်းတိုက်ပုံရိပ် ၁၀">
+</div>
+
+<button onclick="showGallery(this)">Show More</button>
 </section>
 
 <section id="photo">
@@ -186,12 +181,11 @@ section {
 	
 
 <script>
-function showGallery() {
-    let gallery = document.getElementById("galleryMore");
-    let button = event.target;
+function showGallery(button) {
+    const gallery = document.getElementById("galleryMore");
 
     if (gallery.style.display === "none") {
-        gallery.style.display = "contents";
+        gallery.style.display = "grid";
         button.innerHTML = "Show Less";
     } else {
         gallery.style.display = "none";
