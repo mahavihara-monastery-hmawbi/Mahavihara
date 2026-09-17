@@ -156,15 +156,16 @@ section {
   </div>
 	
 	 <div class="image-gallery">
-		 <span id="moreText">
+	 <div id="galleryMore" style="display: none;">	
     <img src="photo9.jpg" alt="ကျောင်းတိုက်ပုံရိပ် ၁">
     <img src="photo10.jpg" alt="ကျောင်းတိုက်ပုံရိပ် ၂">
     <img src="photo11.jpg" alt="ကျောင်းတိုက်ပုံရိပ် ၃">
     <img src="photo12.jpg" alt="ကျောင်းတိုက်ပုံရိပ် ၄">
     <img src="photo13.jpg" alt="ကျောင်းတိုက်ပုံရိပ် ၅">
-	</span> <button onclick="showMore()">Show More</button>
+	 <button onclick="showMore()">Show More</button>
   </div>
-	
+	 <button onclick="showMore()">Show More</button>
+	 </div>
 </section>
 
 <section id="photo">
@@ -184,19 +185,19 @@ section {
 </section>
 	
 
-  <script>
-    function showMore() {
-      let text = document.getElementById("moreText");
-      let button = event.target;
+<script>
+function showGallery() {
+    let gallery = document.getElementById("galleryMore");
+    let button = event.target;
 
-      if (text.style.display === "none") {
-        text.style.display = "inline";
+    if (gallery.style.display === "none") {
+        gallery.style.display = "contents";
         button.innerHTML = "Show Less";
-      } else {
-        text.style.display = "none";
+    } else {
+        gallery.style.display = "none";
         button.innerHTML = "Show More";
-      }
     }
-  </script>
+}
+</script>
 </body>
 </html>
