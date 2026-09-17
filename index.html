@@ -243,13 +243,13 @@ function showGallery(button) {
 }
 
 function showphoto(button) {
-    const gallery = document.getElementById("photoMore");
+    const photo = document.getElementById("photoMore");
 
-    if (gallery.style.display === "none" || gallery.style.display === "") {
-        gallery.style.display = "grid";
+    if (photo.style.display === "none" || photo.style.display === "") {
+        photo.style.display = "grid";
         button.textContent = "Show Less";
     } else {
-        gallery.style.display = "none";
+       photo.style.display = "none";
         button.textContent = "Show More";
     }
 }
